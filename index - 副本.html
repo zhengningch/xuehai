@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Card - Free Bootstrap 4 Profile Card</title>
+    <meta name="description" content="Love profile card." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            height: 100vh;
+            overflow: hidden; /* 防止页面滚动 */
+        }
+        .iframe-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* 半透明黑色背景 */
+            z-index: 1000;
+        }
+        .iframe-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #fff;
+            border: none;
+            font-size: 1.5rem;
+            padding: 5px 10px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+    </style>
+</head>
+<body class="demo-two">
+    <video autoplay loop class="video-background" muted plays-inline>
+        <source src="img/mountains.mp4" type="video/mp4">
+    </video>
+    <!--hero section-->
+    <section class="hero bg-indigo">
+        <div class="container">
+            <div class="row">
+                <div class="card border-none col-lg-6 col-md-8 col-sm-10 mx-auto bg-texture">
+                    <div class="card-body text-white text-center py-4">
+                        <div class="mb-3">
+                            <img src="img/male.jpg" alt="Male" class="brand-logo img-fluid rounded-circle"/>
+                        </div>
+                        <h1 class="pt-4 text-white h2">學海無涯苦作舟。<br/> </h1>
+                        <p class="mt-4 lead text-white">
+                            开始向我提问吧。
+                        </p>
+                        <p class="mt-2">
+                            <a href="#"><em class="ion-social-twitter text-twitter-alt icon-sm mr-3"></em></a>
+                            <a href="#"><em class="ion-social-github text-github-alt icon-sm mr-3"></em></a>
+                            <a href="#"><em class="ion-social-linkedin text-linkedin-alt icon-sm mr-3"></em></a>
+                            <a href="#"><em class="ion-social-facebook text-facebook-alt icon-sm mr-3"></em></a>
+                        </p>
+                        <div class="pt-3">
+                            <button id="start-button" class="btn btn-white-alt text-blue btn-lg">
+                                开始吧!
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="col-sm-12 mt-5 footer">
+                    <p class="text-white small text-center"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="iframe-container" class="iframe-container">
+        <button class="close-button" id="close-button">&times;</button>
+        <iframe
+            src="https://udify.app/chatbot/uCRJcsURKtqvBHLx"
+            allow="microphone">
+        </iframe>
+    </div>
+    <script>
+        document.getElementById('start-button').addEventListener('click', function() {
+            document.getElementById('iframe-container').style.display = 'block';
+        });
+        document.getElementById('close-button').addEventListener('click', function() {
+            document.getElementById('iframe-container').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
